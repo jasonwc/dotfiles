@@ -1,5 +1,8 @@
 # Dotfiles
-## Usage
+
+In which dotfiles are used to configure various things
+
+## Quick Start
 
 ```
 sh install.sh
@@ -8,3 +11,8 @@ sh install.sh
 sh remove-backups.sh
 ```
 
+## About
+
+- .zshrc - configuration for zsh
+- .tmux.conf - configuration for tmux
+- .gitconfig - configuration for git
