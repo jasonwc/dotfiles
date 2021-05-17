@@ -15,5 +15,8 @@ export EDITOR='vim'
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 eval `dircolors ~/.dircolors`
 PROMPT='$(kube_ps1) '$PROMPT
