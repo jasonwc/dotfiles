@@ -5,7 +5,6 @@ cp .zshrc $HOME/.zshrc
 cp aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
 cp config.zsh $HOME/.oh-my-zsh/custom/config.zsh
 cp env.zsh $HOME/.oh-my-zsh/custom/env.zsh
-cp fpath.zsh $HOME/.oh-my-zsh/custom/fpath.zsh
 cp path.zsh $HOME/.oh-my-zsh/custom/path.zsh
 cp window.zsh $HOME/.oh-my-zsh/custom/window.zsh
 
