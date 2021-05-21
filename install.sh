@@ -7,6 +7,7 @@ cp config.zsh $HOME/.oh-my-zsh/custom/config.zsh
 cp env.zsh $HOME/.oh-my-zsh/custom/env.zsh
 cp path.zsh $HOME/.oh-my-zsh/custom/path.zsh
 cp window.zsh $HOME/.oh-my-zsh/custom/window.zsh
+cp .p10k.zsh $HOME/.p10k.zsh
 
 # .gitconfig
 [ -f $HOME/.gitconfig ] && mv $HOME/.gitconfig $HOME/.gitconfig.backup
