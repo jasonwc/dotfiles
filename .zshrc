@@ -1,12 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/jasonwc/.oh-my-zsh"
+source $HOME/.setup-profile
+source $HOME/.geometer-profile
+
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
@@ -15,18 +14,38 @@ plugins=(
     kube-ps1
     ssh-agent
 )
-
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-. $HOME/.asdf/asdf.sh
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 . $HOME/.asdf/completions/asdf.bash
 
-eval `dircolors ~/.dircolors`
-PROMPT='$(kube_ps1) '$PROMPT
+export EDITOR='vim'
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# TODO: Linux only?
+# eval `dircolors ~/.dircolors`
+export KUBECONFIG="$HOME/.kube/config"\
+"$HOME/.kube/geoshared-construction-config:"\
+"$HOME/.kube/geoshared-staging-config:"\
+"$HOME/.kube/vex-staging-config:"\
+"$HOME/.kube/vex-construction-config:"\
+"$HOME/.kube/herd-staging-config"
+
+# Aliases
+alias watch="watch "
+
+# Work Aliases
+alias geometer="cd $HOME/workspace/geometer"
+alias apex="cd $HOME/workspace/vex-dev/apex"
+alias herd="cd $HOME/workspace/vex-dev/herd"
+alias dots="cd $HOME/dotfiles"
+alias setup="cd $HOME/setup"
+alias s='bin/dev/start'
+alias u='bin/dev/update'
+alias t='bin/dev/test'
+alias shipit='bin/dev/shipit'
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
